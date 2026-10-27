@@ -1,7 +1,7 @@
 import { toLines, getHtml } from "./catena.js";
 export const BASE = "https://www.credinta-catolica.ro/cbc/";
 export function pageLinks(html) {
-  const skip = new Set(["cuprins-detaliat", "lista-siglelor", "abrevieri-biblice"]), set = new Set(), re = /href="(https:\/\/www\.credinta-catolica\.ro\/cbc\/([a-z0-9-]+)\/)(?:#[^"]*)?"/gi; let m;
+  const skip = new Set(["cuprins-detaliat", "lista-siglelor", "abrevieri-biblice", "feed"]), set = new Set(), re = /href="(https:\/\/www\.credinta-catolica\.ro\/cbc\/([a-z0-9-]+)\/)(?:#[^"]*)?"/gi; let m;
   while ((m = re.exec(html))) if (!skip.has(m[2])) set.add(m[1]);
   return [...set];
 }
@@ -51,13 +51,13 @@ export async function buildStep(env, step, books) {
   if (step === 0) {
     const pages = pageLinks(await getHtml(BASE));
     await env.CCC.put("pages", JSON.stringify(pages)); await env.CCC.put("idx", "[]"); await env.CCC.put("unk", "{}");
-    return { total: pages.length, steps: Math.ceil(pages.length / 5) };
+    return { total: pages.length, steps: Math.ceil(pages.length / 1) };
   }
   const AL = aliasMap(books), pages = JSON.parse((await env.CCC.get("pages")) || "[]"), idx = JSON.parse((await env.CCC.get("idx")) || "[]"), unk = JSON.parse((await env.CCC.get("unk")) || "{}");
-  for (const u of pages.slice((step - 1) * 5, step * 5))
+  for (const u of pages.slice((step - 1) * 1, step * 1))
     for (const p of parsePage(await getHtml(u), AL, unk)) if (p.refs.length) idx.push({ n: p.n, u, r: p.refs.map(r => [r.b, r.c, r.f, r.t, r.w]) });
   await env.CCC.put("idx", JSON.stringify(idx)); await env.CCC.put("unk", JSON.stringify(unk));
-  const done = step * 5 >= pages.length;
+  const done = step * 1 >= pages.length;
   return { done, paragraphs: idx.length, unknown: done ? Object.entries(unk).sort((a, b) => b[1] - a[1]).slice(0, 15) : undefined };
 }
 export async function cbcItems(env, abbr, ch, from, to, whole) {

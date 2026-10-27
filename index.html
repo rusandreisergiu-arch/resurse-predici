@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ro"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Resurse pentru predici</title>
+<meta name="theme-color" content="#7a1f2b">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="stylesheet" href="/styles.css">
+</head><body>
+<header><h1>Resurse pentru predici</h1>
+<div class="fs"><button id="fm" aria-label="Font mai mic">A−</button><button id="fp" aria-label="Font mai mare">A+</button></div></header>
+<main>
+<form id="f" novalidate>
+<label>Caută referința<input id="q" placeholder="Matei 1:1-5" autocomplete="off" enterkeyhint="search"></label>
+<label>Cartea<select id="book"></select></label>
+<div class="row">
+<label>Capitol<select id="ch"></select></label>
+<label>De la<select id="vf"></select></label>
+<label>Până la<select id="vt"></select></label>
+</div>
+<label class="chk"><input type="checkbox" id="whole"> Tot capitolul</label>
+<p id="hint" class="hint"></p>
+<div class="row"><button type="submit" class="pri">Caută</button><button type="button" id="reset">Resetează</button></div>
+</form>
+<p id="err" role="alert" hidden></p>
+<section id="out" aria-live="polite"></section>
+</main>
+<footer><a href="/surse.html">Surse și licențe</a> · <a href="/confidentialitate.html">Confidențialitate</a> · <a href="/termeni.html">Termeni</a></footer>
+<script src="/app.js"></script>
+</body></html>

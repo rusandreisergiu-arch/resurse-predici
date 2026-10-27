@@ -1,0 +1,26 @@
+:root{--bg:#fbf8f3;--fg:#1d1a17;--mut:#6b6459;--card:#fff;--bd:#ddd3c4;--ac:#7a1f2b;--fs:17px}
+@media(prefers-color-scheme:dark){:root{--bg:#161412;--fg:#efe9e0;--mut:#a39a8c;--card:#211e1b;--bd:#3a352f;--ac:#d98a95}}
+*{box-sizing:border-box}html{font-size:var(--fs)}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,sans-serif;line-height:1.5;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);overflow-x:hidden}
+header{display:flex;justify-content:space-between;align-items:center;padding:.8rem 1rem;border-bottom:1px solid var(--bd)}
+h1{font-size:1.2rem;margin:0;color:var(--ac)}
+main{max-width:720px;margin:0 auto;padding:1rem}
+label{display:block;font-size:.8rem;color:var(--mut);margin-bottom:.7rem;flex:1}
+input,select,button{font:inherit;width:100%;min-height:48px;padding:.5rem .7rem;border:1px solid var(--bd);border-radius:10px;background:var(--card);color:var(--fg);margin-top:.2rem}
+.row{display:flex;gap:.6rem}
+button{cursor:pointer;margin-top:0}.fs{display:flex;gap:.4rem}.fs button{width:48px}
+.pri{background:var(--ac);color:#fff;border-color:var(--ac);font-weight:600}
+.hint{font-size:.8rem;color:var(--mut);margin:0 0 .7rem}
+#err{background:#fde8e8;color:#7a1010;padding:.7rem;border-radius:10px}
+h2{font-size:1.1rem;margin:1.4rem 0 .5rem}
+h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ac);margin:1rem 0 .4rem}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:.8rem;margin-bottom:.7rem;overflow-wrap:anywhere}
+.tag{display:inline-block;font-size:.7rem;border:1px solid var(--ac);color:var(--ac);border-radius:99px;padding:0 .5rem;margin-right:.3rem}
+.meta{font-size:.8rem;color:var(--mut)}
+blockquote{margin:.5rem 0;padding-left:.7rem;border-left:3px solid var(--bd)}
+.lbl{font-size:.7rem;font-weight:700;color:var(--mut);text-transform:uppercase}
+.empty{color:var(--mut);font-style:italic}
+footer{text-align:center;font-size:.8rem;padding:1.5rem 1rem;color:var(--mut)}footer a{color:var(--ac)}
+.tr{font-size:1rem}.pending{color:var(--mut);font-style:italic}
+details{margin:.4rem 0}summary{cursor:pointer;padding:.3rem 0}
+.chk{display:flex;align-items:center;gap:.6rem;font-size:1rem;color:var(--fg)}.chk input{width:24px;min-height:24px;margin:0}

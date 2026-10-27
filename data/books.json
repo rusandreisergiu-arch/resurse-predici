@@ -1,0 +1,880 @@
+[
+ {
+  "abbr": "Gen",
+  "name": "Geneza",
+  "chapters": 50,
+  "testament": "VT",
+  "al": [
+   "Gen",
+   "Fc",
+   "Facerea",
+   "Geneza"
+  ]
+ },
+ {
+  "abbr": "Ex",
+  "name": "Exodul",
+  "chapters": 40,
+  "testament": "VT",
+  "al": [
+   "Ex",
+   "Ieșirea",
+   "Exodul"
+  ]
+ },
+ {
+  "abbr": "Lev",
+  "name": "Leviticul",
+  "chapters": 27,
+  "testament": "VT",
+  "al": [
+   "Lev",
+   "Lv",
+   "Leviticul"
+  ]
+ },
+ {
+  "abbr": "Num",
+  "name": "Numerele",
+  "chapters": 36,
+  "testament": "VT",
+  "al": [
+   "Num",
+   "Nm",
+   "Numeri",
+   "Numerele"
+  ]
+ },
+ {
+  "abbr": "Dt",
+  "name": "Deuteronomul",
+  "chapters": 34,
+  "testament": "VT",
+  "al": [
+   "Dt",
+   "Deut",
+   "Deuteronomul"
+  ]
+ },
+ {
+  "abbr": "Ios",
+  "name": "Iosua",
+  "chapters": 24,
+  "testament": "VT",
+  "al": [
+   "Ios",
+   "Iosua",
+   "Isus Navi"
+  ]
+ },
+ {
+  "abbr": "Jud",
+  "name": "Judecătorii",
+  "chapters": 21,
+  "testament": "VT",
+  "al": [
+   "Jud",
+   "Jdc",
+   "Judecătorii"
+  ]
+ },
+ {
+  "abbr": "Rut",
+  "name": "Rut",
+  "chapters": 4,
+  "testament": "VT",
+  "al": [
+   "Rut",
+   "Rt"
+  ]
+ },
+ {
+  "abbr": "1Sam",
+  "name": "1 Samuel",
+  "chapters": 31,
+  "testament": "VT",
+  "al": [
+   "1 Sam",
+   "1 Sm",
+   "1 Samuel"
+  ]
+ },
+ {
+  "abbr": "2Sam",
+  "name": "2 Samuel",
+  "chapters": 24,
+  "testament": "VT",
+  "al": [
+   "2 Sam",
+   "2 Sm",
+   "2 Samuel"
+  ]
+ },
+ {
+  "abbr": "1Rg",
+  "name": "1 Regi",
+  "chapters": 22,
+  "testament": "VT",
+  "al": [
+   "1 Rg",
+   "1 Regi",
+   "1 Împăraților"
+  ]
+ },
+ {
+  "abbr": "2Rg",
+  "name": "2 Regi",
+  "chapters": 25,
+  "testament": "VT",
+  "al": [
+   "2 Rg",
+   "2 Regi",
+   "2 Împăraților"
+  ]
+ },
+ {
+  "abbr": "1Cron",
+  "name": "1 Cronici",
+  "chapters": 29,
+  "testament": "VT",
+  "al": [
+   "1 Cron",
+   "1 Cr",
+   "1 Cronici"
+  ]
+ },
+ {
+  "abbr": "2Cron",
+  "name": "2 Cronici",
+  "chapters": 36,
+  "testament": "VT",
+  "al": [
+   "2 Cron",
+   "2 Cr",
+   "2 Cronici"
+  ]
+ },
+ {
+  "abbr": "Ezd",
+  "name": "Ezdra",
+  "chapters": 10,
+  "testament": "VT",
+  "al": [
+   "Ezd",
+   "Ezdra"
+  ]
+ },
+ {
+  "abbr": "Neh",
+  "name": "Neemia",
+  "chapters": 13,
+  "testament": "VT",
+  "al": [
+   "Neh",
+   "Neemia"
+  ]
+ },
+ {
+  "abbr": "Tob",
+  "name": "Tobit",
+  "chapters": 14,
+  "testament": "VT",
+  "al": [
+   "Tob",
+   "Tobia",
+   "Tobit"
+  ]
+ },
+ {
+  "abbr": "Iud",
+  "name": "Iudita",
+  "chapters": 16,
+  "testament": "VT",
+  "al": [
+   "Idt",
+   "Iudita"
+  ]
+ },
+ {
+  "abbr": "Est",
+  "name": "Estera",
+  "chapters": 10,
+  "testament": "VT",
+  "al": [
+   "Est",
+   "Estera"
+  ]
+ },
+ {
+  "abbr": "1Mac",
+  "name": "1 Macabei",
+  "chapters": 16,
+  "testament": "VT",
+  "al": [
+   "1 Mac",
+   "1 Mc",
+   "1 Macabei"
+  ]
+ },
+ {
+  "abbr": "2Mac",
+  "name": "2 Macabei",
+  "chapters": 15,
+  "testament": "VT",
+  "al": [
+   "2 Mac",
+   "2 Mc",
+   "2 Macabei"
+  ]
+ },
+ {
+  "abbr": "Iov",
+  "name": "Iov",
+  "chapters": 42,
+  "testament": "VT",
+  "al": [
+   "Iov",
+   "Iob"
+  ]
+ },
+ {
+  "abbr": "Ps",
+  "name": "Psalmii",
+  "chapters": 150,
+  "testament": "VT",
+  "al": [
+   "Ps",
+   "Psalmi",
+   "Psalmii",
+   "Psalm"
+  ]
+ },
+ {
+  "abbr": "Prov",
+  "name": "Proverbele",
+  "chapters": 31,
+  "testament": "VT",
+  "al": [
+   "Prov",
+   "Pr",
+   "Proverbele"
+  ]
+ },
+ {
+  "abbr": "Ecl",
+  "name": "Eclesiastul",
+  "chapters": 12,
+  "testament": "VT",
+  "al": [
+   "Ecl",
+   "Qo",
+   "Eclesiastul",
+   "Qohelet"
+  ]
+ },
+ {
+  "abbr": "Cânt",
+  "name": "Cântarea Cântărilor",
+  "chapters": 8,
+  "testament": "VT",
+  "al": [
+   "Cânt",
+   "Ct",
+   "Cântarea Cântărilor"
+  ]
+ },
+ {
+  "abbr": "Înț",
+  "name": "Înțelepciunea",
+  "chapters": 19,
+  "testament": "VT",
+  "al": [
+   "Înț",
+   "Înțelepciunea"
+  ]
+ },
+ {
+  "abbr": "Sir",
+  "name": "Sirah",
+  "chapters": 51,
+  "testament": "VT",
+  "al": [
+   "Sir",
+   "Sirah",
+   "Isus Sirah"
+  ]
+ },
+ {
+  "abbr": "Is",
+  "name": "Isaia",
+  "chapters": 66,
+  "testament": "VT",
+  "al": [
+   "Is",
+   "Isaia"
+  ]
+ },
+ {
+  "abbr": "Ier",
+  "name": "Ieremia",
+  "chapters": 52,
+  "testament": "VT",
+  "al": [
+   "Ier",
+   "Ir",
+   "Ieremia"
+  ]
+ },
+ {
+  "abbr": "Plâng",
+  "name": "Plângerile",
+  "chapters": 5,
+  "testament": "VT",
+  "al": [
+   "Plâng",
+   "Plg",
+   "Tr",
+   "Plângerile"
+  ]
+ },
+ {
+  "abbr": "Bar",
+  "name": "Baruc",
+  "chapters": 6,
+  "testament": "VT",
+  "al": [
+   "Bar",
+   "Ba",
+   "Baruh",
+   "Baruc"
+  ]
+ },
+ {
+  "abbr": "Ez",
+  "name": "Ezechiel",
+  "chapters": 48,
+  "testament": "VT",
+  "al": [
+   "Ez",
+   "Ezechiel"
+  ]
+ },
+ {
+  "abbr": "Dan",
+  "name": "Daniel",
+  "chapters": 14,
+  "testament": "VT",
+  "al": [
+   "Dan",
+   "Dn",
+   "Daniel"
+  ]
+ },
+ {
+  "abbr": "Os",
+  "name": "Osea",
+  "chapters": 14,
+  "testament": "VT",
+  "al": [
+   "Os",
+   "Osea"
+  ]
+ },
+ {
+  "abbr": "Ioel",
+  "name": "Ioel",
+  "chapters": 4,
+  "testament": "VT",
+  "al": [
+   "Ioel",
+   "Ioe",
+   "Jl"
+  ]
+ },
+ {
+  "abbr": "Am",
+  "name": "Amos",
+  "chapters": 9,
+  "testament": "VT",
+  "al": [
+   "Am",
+   "Amos"
+  ]
+ },
+ {
+  "abbr": "Ab",
+  "name": "Obadia",
+  "chapters": 1,
+  "testament": "VT",
+  "al": [
+   "Ab",
+   "Abd",
+   "Obadia"
+  ]
+ },
+ {
+  "abbr": "Iona",
+  "name": "Iona",
+  "chapters": 4,
+  "testament": "VT",
+  "al": [
+   "Iona",
+   "Ion"
+  ]
+ },
+ {
+  "abbr": "Mih",
+  "name": "Mica",
+  "chapters": 7,
+  "testament": "VT",
+  "al": [
+   "Mih",
+   "Mi",
+   "Mica"
+  ]
+ },
+ {
+  "abbr": "Naum",
+  "name": "Naum",
+  "chapters": 3,
+  "testament": "VT",
+  "al": [
+   "Naum",
+   "Na",
+   "Nah"
+  ]
+ },
+ {
+  "abbr": "Hab",
+  "name": "Habacuc",
+  "chapters": 3,
+  "testament": "VT",
+  "al": [
+   "Hab",
+   "Ha",
+   "Habacuc"
+  ]
+ },
+ {
+  "abbr": "Sof",
+  "name": "Țefania",
+  "chapters": 3,
+  "testament": "VT",
+  "al": [
+   "Sof",
+   "So",
+   "Țefania",
+   "Sefania"
+  ]
+ },
+ {
+  "abbr": "Hag",
+  "name": "Hagai",
+  "chapters": 2,
+  "testament": "VT",
+  "al": [
+   "Hag",
+   "Ag",
+   "Hagai"
+  ]
+ },
+ {
+  "abbr": "Za",
+  "name": "Zaharia",
+  "chapters": 14,
+  "testament": "VT",
+  "al": [
+   "Za",
+   "Zah",
+   "Zaharia"
+  ]
+ },
+ {
+  "abbr": "Mal",
+  "name": "Maleahi",
+  "chapters": 3,
+  "testament": "VT",
+  "al": [
+   "Mal",
+   "Ml",
+   "Maleahi"
+  ]
+ },
+ {
+  "abbr": "Mt",
+  "name": "Matei",
+  "chapters": 28,
+  "testament": "NT",
+  "verses": [
+   25,
+   23,
+   17,
+   25,
+   48,
+   34,
+   29,
+   34,
+   38,
+   42,
+   30,
+   50,
+   58,
+   36,
+   39,
+   28,
+   27,
+   35,
+   30,
+   34,
+   46,
+   46,
+   39,
+   51,
+   46,
+   75,
+   66,
+   20
+  ],
+  "al": [
+   "Mt",
+   "Matei"
+  ]
+ },
+ {
+  "abbr": "Mc",
+  "name": "Marcu",
+  "chapters": 16,
+  "testament": "NT",
+  "verses": [
+   45,
+   28,
+   35,
+   41,
+   43,
+   56,
+   37,
+   38,
+   50,
+   52,
+   33,
+   44,
+   37,
+   72,
+   47,
+   20
+  ],
+  "al": [
+   "Mc",
+   "Marcu"
+  ]
+ },
+ {
+  "abbr": "Lc",
+  "name": "Luca",
+  "chapters": 24,
+  "testament": "NT",
+  "verses": [
+   80,
+   52,
+   38,
+   44,
+   39,
+   49,
+   50,
+   56,
+   62,
+   42,
+   54,
+   59,
+   35,
+   35,
+   32,
+   31,
+   37,
+   43,
+   48,
+   47,
+   38,
+   71,
+   56,
+   53
+  ],
+  "al": [
+   "Lc",
+   "Luca"
+  ]
+ },
+ {
+  "abbr": "In",
+  "name": "Ioan",
+  "chapters": 21,
+  "testament": "NT",
+  "verses": [
+   51,
+   25,
+   36,
+   54,
+   47,
+   71,
+   53,
+   59,
+   41,
+   42,
+   57,
+   50,
+   38,
+   31,
+   27,
+   33,
+   26,
+   40,
+   42,
+   31,
+   25
+  ],
+  "al": [
+   "In",
+   "Ioan"
+  ]
+ },
+ {
+  "abbr": "FA",
+  "name": "Faptele Apostolilor",
+  "chapters": 28,
+  "testament": "NT",
+  "al": [
+   "FA",
+   "Fapte",
+   "Faptele Apostolilor"
+  ]
+ },
+ {
+  "abbr": "Rom",
+  "name": "Romani",
+  "chapters": 16,
+  "testament": "NT",
+  "al": [
+   "Rom",
+   "Romani"
+  ]
+ },
+ {
+  "abbr": "1Cor",
+  "name": "1 Corinteni",
+  "chapters": 16,
+  "testament": "NT",
+  "al": [
+   "1 Cor",
+   "1 Co",
+   "1 Corinteni"
+  ]
+ },
+ {
+  "abbr": "2Cor",
+  "name": "2 Corinteni",
+  "chapters": 13,
+  "testament": "NT",
+  "al": [
+   "2 Cor",
+   "2 Co",
+   "2 Corinteni"
+  ]
+ },
+ {
+  "abbr": "Gal",
+  "name": "Galateni",
+  "chapters": 6,
+  "testament": "NT",
+  "al": [
+   "Gal",
+   "Galateni"
+  ]
+ },
+ {
+  "abbr": "Ef",
+  "name": "Efeseni",
+  "chapters": 6,
+  "testament": "NT",
+  "al": [
+   "Ef",
+   "Efeseni"
+  ]
+ },
+ {
+  "abbr": "Flp",
+  "name": "Filipeni",
+  "chapters": 4,
+  "testament": "NT",
+  "al": [
+   "Flp",
+   "Fil",
+   "Filipeni"
+  ]
+ },
+ {
+  "abbr": "Col",
+  "name": "Coloseni",
+  "chapters": 4,
+  "testament": "NT",
+  "al": [
+   "Col",
+   "Coloseni"
+  ]
+ },
+ {
+  "abbr": "1Tes",
+  "name": "1 Tesaloniceni",
+  "chapters": 5,
+  "testament": "NT",
+  "al": [
+   "1 Tes",
+   "1 Ts",
+   "1 Tesaloniceni"
+  ]
+ },
+ {
+  "abbr": "2Tes",
+  "name": "2 Tesaloniceni",
+  "chapters": 3,
+  "testament": "NT",
+  "al": [
+   "2 Tes",
+   "2 Ts",
+   "2 Tesaloniceni"
+  ]
+ },
+ {
+  "abbr": "1Tim",
+  "name": "1 Timotei",
+  "chapters": 6,
+  "testament": "NT",
+  "al": [
+   "1 Tim",
+   "1 Timotei"
+  ]
+ },
+ {
+  "abbr": "2Tim",
+  "name": "2 Timotei",
+  "chapters": 4,
+  "testament": "NT",
+  "al": [
+   "2 Tim",
+   "2 Timotei"
+  ]
+ },
+ {
+  "abbr": "Tit",
+  "name": "Tit",
+  "chapters": 3,
+  "testament": "NT",
+  "al": [
+   "Tit"
+  ]
+ },
+ {
+  "abbr": "Flm",
+  "name": "Filimon",
+  "chapters": 1,
+  "testament": "NT",
+  "al": [
+   "Flm",
+   "Filimon"
+  ]
+ },
+ {
+  "abbr": "Evr",
+  "name": "Evrei",
+  "chapters": 13,
+  "testament": "NT",
+  "al": [
+   "Evr",
+   "Ebr",
+   "Evrei"
+  ]
+ },
+ {
+  "abbr": "Iac",
+  "name": "Iacob",
+  "chapters": 5,
+  "testament": "NT",
+  "al": [
+   "Iac",
+   "Iacob"
+  ]
+ },
+ {
+  "abbr": "1Pt",
+  "name": "1 Petru",
+  "chapters": 5,
+  "testament": "NT",
+  "al": [
+   "1 Pt",
+   "1 Petru"
+  ]
+ },
+ {
+  "abbr": "2Pt",
+  "name": "2 Petru",
+  "chapters": 3,
+  "testament": "NT",
+  "al": [
+   "2 Pt",
+   "2 Petru"
+  ]
+ },
+ {
+  "abbr": "1In",
+  "name": "1 Ioan",
+  "chapters": 5,
+  "testament": "NT",
+  "al": [
+   "1 In",
+   "1 Io",
+   "1 Ioan"
+  ]
+ },
+ {
+  "abbr": "2In",
+  "name": "2 Ioan",
+  "chapters": 1,
+  "testament": "NT",
+  "al": [
+   "2 In",
+   "2 Io",
+   "2 Ioan"
+  ]
+ },
+ {
+  "abbr": "3In",
+  "name": "3 Ioan",
+  "chapters": 1,
+  "testament": "NT",
+  "al": [
+   "3 In",
+   "3 Io",
+   "3 Ioan"
+  ]
+ },
+ {
+  "abbr": "Iuda",
+  "name": "Iuda",
+  "chapters": 1,
+  "testament": "NT",
+  "al": [
+   "Iuda",
+   "Iud"
+  ]
+ },
+ {
+  "abbr": "Ap",
+  "name": "Apocalipsa",
+  "chapters": 22,
+  "testament": "NT",
+  "al": [
+   "Ap",
+   "Apoc",
+   "Apocalipsa"
+  ]
+ }
+]

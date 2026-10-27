@@ -7,6 +7,12 @@
     "directory": ".",
     "binding": "ASSETS"
   },
+  "kv_namespaces": [
+    {
+      "binding": "CCC",
+      "id": "f68851235b7242cb8525089ff39f8781"
+    }
+  ],
   "observability": {
     "enabled": true
   }

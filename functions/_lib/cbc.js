@@ -1,7 +1,6 @@
-// Catehismul Bisericii Catolice (ed. română, credinta-catolica.ro). Indexul verset→paragraf se construiește o dată (KV "CCC").
+// Catehismul Bisericii Catolice (ed. română, credinta-catolica.ro).
 import { toLines, getHtml } from "./catena.js";
 export const BASE = "https://www.credinta-catolica.ro/cbc/";
-const GOSP = { Mt: 1, Mc: 1, Lc: 1, In: 1 };
 export function pageLinks(html) {
   const skip = new Set(["cuprins-detaliat", "lista-siglelor", "abrevieri-biblice"]), set = new Set(), re = /href="(https:\/\/www\.credinta-catolica\.ro\/cbc\/([a-z0-9-]+)\/)(?:#[^"]*)?"/gi; let m;
   while ((m = re.exec(html))) if (!skip.has(m[2])) set.add(m[1]);
@@ -12,7 +11,6 @@ const NOISE = new Set(["cf", "vol", "pag", "nr", "art", "cap", "nota", "can", "p
 const AMBIG = new Set(["am", "is", "os", "ab", "in", "za", "na", "ha", "so", "ag", "ba", "ion", "mi", "pr", "ct", "ez", "ml"]);
 const ONE = new Set(["Ab", "Flm", "2In", "3In", "Iuda"]);
 export const aliasMap = books => { const m = new Map(); for (const b of books) for (const a of b.al) m.set(nrm(a), b.abbr); return m; };
-// Trimiteri biblice în format românesc: „Mt 6, 9-13”, „1 Cor 11, 26”, „Lc 1, 26-38.31”, „Mt 5-7”.
 export function parseRefs(s, AL, unk) {
   const out = [], re = /(?<![\w])((?:[123]\s?)?[A-ZĂÂÎȘȚ][A-Za-zăâîșțĂÂÎȘȚ]{1,8})\.?\s+(\d{1,3})(?:\s*,\s*(\d{1,3}(?:\s*[-–]\s*\d{1,3})?(?:\s*\.\s*\d{1,3}(?:\s*[-–]\s*\d{1,3})?)*)|\s*[-–]\s*(\d{1,3}))?/g; let m;
   while ((m = re.exec(s))) {
@@ -26,21 +24,27 @@ export function parseRefs(s, AL, unk) {
   }
   return out;
 }
+const ENT = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", rsquo: "\u2019", lsquo: "\u2018", ldquo: "\u201c", rdquo: "\u201d", mdash: "\u2014", ndash: "\u2013" };
+const dec = s => s.replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16))).replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(+d)).replace(/&([a-z]+);/gi, (m, n) => ENT[n.toLowerCase()] ?? m);
 export function parsePage(html, AL, unk) {
-  html = html.replace(/<h[1-6][^>]*>([\s\S]*?)<\/h[1-6]>/gi, "\n@@H@@$1\n");
-  const paras = [], notes = {}; let last = 0, cur = null, inNotes = false;
-  for (const l of toLines(html)) {
-    if (l.startsWith("@@H@@")) { cur = null; if (/^Note$/i.test(l.slice(5).trim())) inNotes = true; continue; }
-    if (/^Note$/i.test(l)) { inNotes = true; cur = null; continue; }
-    if (inNotes) { const m = l.match(/^\[(\d+)\]\s*(.*)$/); if (m) notes[+m[1]] = m[2]; else if (/^©|^Important/.test(l)) break; continue; }
-    const m = l.match(/^(\d{1,4})\.\s+(.*)$/);
-    if (m && (last === 0 || +m[1] === last + 1)) { last = +m[1]; cur = { n: last, text: m[2] }; paras.push(cur); continue; }
-    if (cur && !/^(Completări|Adresa ta)/.test(l)) cur.text += "\n" + l;
-  }
-  for (const p of paras) {
-    const marks = [...p.text.matchAll(/\[(\d+)\]/g)].map(x => +x[1]);
-    p.refs = parseRefs(p.text.replace(/\[\d+\]/g, "") + " ; " + marks.map(k => notes[k] || "").join(" ; "), AL, unk);
-    p.text = p.text.replace(/\[?\[\d+\]\]?/g, "").replace(/[ \t]+/g, " ").trim();
+  const paras = [];
+  const olRe = /<ol[^>]+start[=\s]+['"']?(\d+)['"']?[^>]*>([\s\S]*?)<\/ol>/gi;
+
+  let olM;
+  while ((olM = olRe.exec(html))) {
+    const startN = +olM[1];
+    const content = olM[2];
+    const liRe = /<li[^>]*>([\s\S]*?)(?=<\/li>|<ol|$)/gi;
+    let liM, idx = 0;
+    while ((liM = liRe.exec(content))) {
+      const n = startN + idx;
+      let text = liM[1].replace(/<a[^>]+name=['"]notaref\d+['"][^>]*>.*?<\/a>/gi, "").replace(/<a[^>]+name=['"]nr\d+['"][^>]*><\/a>/gi, "").replace(/<[^>]+>/g, " ").replace(/\[\d+\]/g, "").replace(/\s+/g, " ").trim();
+      text = dec(text);
+      if (text.length < 10) { idx++; continue; }
+      const refs = parseRefs(text, AL, unk);
+      paras.push({ n, text, refs });
+      idx++;
+    }
   }
   return paras;
 }
@@ -58,7 +62,8 @@ export async function buildStep(env, step, books) {
   return { done, paragraphs: idx.length, unknown: done ? Object.entries(unk).sort((a, b) => b[1] - a[1]).slice(0, 15) : undefined };
 }
 export async function cbcItems(env, abbr, ch, from, to, whole) {
-  if (!env.CCC) return { items: [], notice: "Catehism: lipsește bindingul KV „CCC” (vezi README)." };
+
+  if (!env.CCC) return { items: [], notice: "Catehism: lipsește bindingul KV „CCC" (vezi README)." };
   const idx = JSON.parse((await env.CCC.get("idx")) || "[]");
   if (!idx.length) return { items: [], notice: "Catehism: indexul nu e construit încă (deschide /admin-index.html o singură dată)." };
   const hits = [];
@@ -68,10 +73,7 @@ export async function cbcItems(env, abbr, ch, from, to, whole) {
   for (const { e, r } of hits.slice(0, 12)) {
     if (!cache.has(e.u)) cache.set(e.u, parsePage(await getHtml(e.u), new Map(), null));
     const p = cache.get(e.u).find(x => x.n === e.n); if (!p) continue;
-    items.push({ id: "cbc-" + e.n, status: "published", book: abbr, chapter: ch, verse_from: r[4] ? from : r[2], verse_to: r[4] ? to : r[3],
-      source_type: "catechism", title: "Catehismul Bisericii Catolice", author: "", locator: "§" + e.n, original_lang: "ro",
-      original_text: p.text.length > 2500 ? p.text.slice(0, 2500) + "…" : p.text, translation_status: "official", source_url: e.u,
-      license: "© ARCB / Libreria Editrice Vaticana – citat de pe credinta-catolica.ro, cu trimitere la sursă", order: e.n });
+    items.push({ id: "cbc-" + e.n, status: "published", book: abbr, chapter: ch, verse_from: r[4] ? from : r[2], verse_to: r[4] ? to : r[3], source_type: "catechism", title: "Catehismul Bisericii Catolice", author: "", locator: "§" + e.n, original_lang: "ro", original_text: p.text.length > 2500 ? p.text.slice(0, 2500) + "…" : p.text, translation_status: "official", source_url: e.u, license: "© ARCB / Libreria Editrice Vaticana – citat de pe credinta-catolica.ro, cu trimitere la sursă", order: e.n });
   }
   return { items, truncated: hits.length > 12 };
 }

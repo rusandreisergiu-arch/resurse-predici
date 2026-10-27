@@ -5,9 +5,13 @@ const ENT = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", rsquo
 const dec = s => s.replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)))
   .replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(+d)).replace(/&([a-z]+);/gi, (m, n) => ENT[n.toLowerCase()] ?? m);
 export async function getHtml(url) {
-  const r = await fetch(url, { headers: UA, cf: { cacheTtl: 604800, cacheEverything: true } });
-  if (!r.ok) throw new Error("upstream " + r.status);
-  return r.text();
+  let last = "";
+  for (let i = 0; i < 3; i++) {
+    const u = i === 0 ? url : url + (url.includes("?") ? "&" : "?") + "_r=" + Date.now() + i;
+    const opt = i === 0 ? { headers: UA, cf: { cacheTtl: 86400, cacheEverything: true } } : { headers: UA, cf: { cacheTtl: 0 } };
+    try { const r = await fetch(u, opt); if (r.ok) return await r.text(); last = "upstream " + r.status; } catch (e) { last = String((e && e.message) || e); }
+  }
+  throw new Error(last + " " + url);
 }
 export function findChapterUrl(tocHtml, ch) {
   const re = /<a[^>]*href="([^"]+)"[^>]*>\s*Chapter\s+(\d+)\s*<\/a>/gi; let m;
